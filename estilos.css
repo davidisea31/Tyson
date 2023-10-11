@@ -1,23 +1,15 @@
 /* Establece la imagen de fondo */
 body {
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     margin: 0;
     padding: 0;
     background-image: url('background.jpg');
-    background-size: cover; /* Ajusta la imagen de fondo al tamaño de la ventana */
-    background-repeat: no-repeat; /* Evita la repetición de la imagen */
-    background-attachment: fixed; /* Fija la imagen de fondo */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-/* Define una animación para el efecto de transparencia */
-@keyframes fadeOut {
-    0% {
-        opacity: 1; /* Opacidad inicial (completamente visible) */
-    }
-    100% {
-        opacity: 0.5; /* Opacidad después de 10 segundos (semi-transparente) */
-    }
-}
+
 
 /* Aplica la animación al fondo después de 10 segundos */
 body::after {
@@ -27,20 +19,19 @@ body::after {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0); /* Color de fondo transparente al principio */
-    animation: fadeOut 10s linear 10s forwards; /* Aplica la animación después de 10 segundos */
-    pointer-events: none; /* Evita que el fondo transparente interfiera con los elementos de la página */
-    z-index: -1; /* Coloca el fondo transparente detrás del contenido */
+    background-color: rgba(0, 0, 0, 0);
+    animation: fadeOut 10s linear 10s forwards;
+    pointer-events: none;
+    z-index: -1;
 }
 
-
-
 header {
-    background-color:  #555;
+    background-color: #555;
     color: #fff;
     text-align: center;
     padding: 1px 0;
 }
+
 nav ul {
     list-style-type: none;
     margin: 0;
@@ -49,10 +40,12 @@ nav ul {
     justify-content: center;
     background-color: #f94646;
 }
+
 nav ul li {
     margin: 0;
     padding: 0;
 }
+
 nav a {
     text-decoration: none;
     color: #fff;
@@ -60,9 +53,11 @@ nav a {
     display: inline-block;
     transition: background-color 0.3s ease;
 }
+
 nav a:hover {
     background-color: #555;
 }
+
 section {
     max-width: 800px;
     margin: 0 auto;
@@ -71,9 +66,11 @@ section {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
 }
+
 h1, h2, h3 {
     color: rgb(222, 100, 100);
 }
+
 footer {
     text-align: center;
     background-color: rgb(222, 100, 100);
@@ -82,55 +79,91 @@ footer {
 }
 
 .coco {
-
     width: 80%;
 }
 
 /* Estilo base de la clase .coca */
 /* CSS para centrar la imagen */
 .coca {
-    width: 20%;
+    width: 30%;
     border-radius: 50%;
-    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
-    position: absolute;
-    top: 337%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-bottom: 5%;
 }
 
 .logo {
-    width: 10%;
+    width: 7%;
     border-radius: 50%;
-    
 }
 
 .section-description1 {
-    padding-bottom: 35%;
+    padding-bottom: 5%;
 }
 
 .Progra {
-    width: 245px;
+    width: 205px;
     border-radius: 50%;
-    transition: width 0.3s ease-in-out, transform 0.3s ease-in-out;
-    position: absolute;
-    top: 1560%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    padding-bottom: 5%;
+    display: block;
+    margin: 0 auto; /* Centra horizontalmente la imagen */
 }
 
 .ret {
-    padding-bottom: 280px;
+    padding-bottom: 0px;
 }
 
-/* Ajustes responsive */
-@media screen and (max-width: 768px) {
-    body {
-        background-attachment: scroll; /* Cambia la imagen de fondo para que no se fije en pantallas pequeñas */
-    }
+/* Estilo inicial del menú */
+#menu {
+    display: none;
+}
 
-    .coco, .coca, .logo, .Progra {
-        width: 50%; /* Ajusta el tamaño de las imágenes en pantallas pequeñas */
-    }
+#menu ul {
+    list-style-type: none;
+    padding: 0;
+}
 
-    /* Agrega más ajustes responsive según sea necesario */
+#menu li {
+    margin: 10px 0;
+}
+
+/* Estilo del botón del menú */
+#menu-btn {
+    background-color: #555;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Estilo del menú desplegable */
+#menu.active {
+    display: block;
+    position: absolute;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    z-index: 1;
+}
+
+#menu.active ul {
+    padding: 10px;
+    display: block;
+}
+
+#menu.active li {
+    margin: 10px 0;
+}
+
+/* Ajusta los estilos según el tamaño de la pantalla */
+@media (max-width: 768px) {
+    .coca {
+        width: 60%;
+    }
+    
+    .logo {
+        width: 15%;
+    }
+    
+    .section-description1, .Progra {
+        padding-bottom: 10%;
+    }
 }
